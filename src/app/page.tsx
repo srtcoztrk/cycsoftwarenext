@@ -1,101 +1,117 @@
-import Image from "next/image";
 
-export default function Home() {
+import React from 'react'
+import { AuroraHero } from '@/components/AuroraHero'
+import { CanvasRevealEffectDemo } from '@/components/canvas-reveal-demo'
+import { Button } from '@/components/moving-border'
+import { IoCalendarOutline } from "react-icons/io5";
+import { MdOutlineDesignServices } from "react-icons/md";
+import { FaCode } from "react-icons/fa6";
+import { IoCloudUploadOutline } from "react-icons/io5";
+import { CardBody, CardContainer, CardItem } from "@/components/3d-card";
+import Image from 'next/image';
+import meritlogo from "@/assets/images/meritlogobuyuk.png"
+
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <AuroraHero/>
+      <CanvasRevealEffectDemo/>
+      <div className="bg-[#020617] py-8">
+          <div className="h-[8rem] md:h-[10rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+            <h1 className="md:text-5xl text-3xl lg:text-7xl font-bold text-center bg-gradient-to-b from-sky-500 to-emerald-500 text-transparent bg-clip-text relative z-20">
+              NASIL ÇALIŞIYORUZ ?
+            </h1>
+            <div className="w-[40rem] h-8 relative">
+              {/* Gradients */}
+              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+              
+              </div>
+          </div> 
+          <div className="flex flex-col justify-center items-center md:text-center md:flex-row gap-4 p-8">
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button borderRadius="1.75rem" className="  text-black justify-start items-start h-72 ">
+              <div className="flex flex-col justify-center items-center text-center gap-4 p-4 text-white">
+              <IoCalendarOutline className='text-5xl text-center'/>
+              <h1 className='text-2xl font-bold'>Planlama</h1>
+              <h2 className='text-sm font-light'>Firmanızın ihtiyaçlarına göre analizlerin yapılması ve iş akış diyagramlarının oluşturulması.</h2>
+              </div>
+            </Button>
+            <Button borderRadius="1.75rem" className="  text-black  justify-start items-start h-72 ">
+              <div className="flex flex-col justify-center items-center text-center gap-4 p-4 text-white">
+              <MdOutlineDesignServices className='text-5xl text-center'/>
+              <h1 className='text-2xl font-bold'>Tasarım</h1>
+              <h2 className='text-sm font-light'>Firmanızın amaç ve hedeflerine göre size özel tasarımın oluşturulması.</h2>
+              </div>
+            </Button>
+          </div>
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button borderRadius="1.75rem" className="  text-black justify-start items-start h-72 ">
+              <div className="flex flex-col justify-center items-center text-center gap-4 p-4 text-white">
+              <FaCode className='text-5xl text-center'/>
+              <h1 className='text-2xl font-bold'>Kodlama</h1>
+              <h2 className='text-sm font-light'>Projenin sağlıklı ve stabil çalışması için komutların entegre edilmesi. Her uygulama ve tasarıma uygun alt yapıların kullanılması.</h2>
+              </div>
+            </Button>
+            <Button borderRadius="1.75rem" className="  text-black  justify-start items-start h-72 ">
+              <div className="flex flex-col justify-center items-center text-center gap-4 p-4 text-white">
+              <IoCloudUploadOutline className='text-5xl text-center'/>
+              <h1 className='text-2xl font-bold'>Yayınlama</h1>
+              <h2 className='text-sm font-light'>Kodlama aşamasında oluşturulan projenin stabil çalışabilmesi için detaylı tüm testlerin yapılması ve yayınlanması.</h2>
+              </div>
+            </Button>
+          </div>
+      </div>   
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      <div className="bg-[#020617] py-8">
+      <div className="h-[8rem] md:h-[10rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+            <h1 className="md:text-5xl text-3xl lg:text-7xl font-bold text-center bg-gradient-to-b from-sky-500 to-emerald-500 text-transparent bg-clip-text relative z-20">
+              REFERANSLAR
+            </h1>
+            <div className="w-[40rem] h-8 relative">
+              {/* Gradients */}
+              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+              
+              </div>
+          </div> 
+          <CardContainer className="inter-var">
+            <CardBody className="bg-black relative group/card  dark:hover:shadow-2xl border-white/[0.5] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+              <CardItem
+                translateZ="50"
+                className="text-xl font-bold text-white"
+              >
+                MERİTYMM
+              </CardItem>
+              <CardItem
+                as="p"
+                translateZ="60"
+                className="text-neutral-300 text-sm max-w-sm mt-2 "
+              >
+                Merit Yeminli Mali Müşavirlik
+              </CardItem>
+              <CardItem translateZ="100" className="w-full mt-4 bg-white rounded-xl">
+                <Image
+                  src={meritlogo.src}
+                  width={1000}
+                  height={1000}
+                  className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                  alt="thumbnail"
+                />
+              </CardItem>
+              
+            </CardBody>
+          </CardContainer>
+      </div>
+      
+      
+    </>
+  )
 }
+
+export default Home
