@@ -109,6 +109,18 @@ const Home = () => {
           </CardContainer>
       </div>
       
+      <footer className='w-full bg-[#020617] border-t-[1px] border-solid border-white/[0.5]'>
+        <div className="pt-0 w-full h-full inline-block z-0">
+          <div className="py-8 px-24 flex items-center justify-center ">
+            <div className='font-extralight text-sm flex gap-1 text-white'>
+              <span>{new Date().getFullYear()}</span>
+              <span>&copy;</span>
+              <span>All Rights Reserved</span>
+              </div>
+            
+          </div>
+        </div>
+      </footer>
       
     </>
   )
